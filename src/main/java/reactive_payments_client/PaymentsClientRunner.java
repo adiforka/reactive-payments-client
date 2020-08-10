@@ -33,6 +33,9 @@ public class PaymentsClientRunner implements CommandLineRunner {
     //get a subscription to the stream of payments
     @Override
     public void run(String... args) throws Exception {
-        getPayments().subscribe(System.out::println);
+        getPayments()
+                .filter(payment -> payment.getAmount() > 5000)
+                .buffer(5)
+                .subscribe(System.out::println);
     }
 }
