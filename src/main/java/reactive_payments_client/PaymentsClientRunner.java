@@ -1,8 +1,9 @@
+package reactive_payments_client;
+
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;
@@ -32,6 +33,6 @@ public class PaymentsClientRunner implements CommandLineRunner {
     //get a subscription to the stream of payments
     @Override
     public void run(String... args) throws Exception {
-
+        getPayments().subscribe(System.out::println);
     }
 }

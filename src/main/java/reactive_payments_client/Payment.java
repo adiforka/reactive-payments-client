@@ -1,3 +1,5 @@
+package reactive_payments_client;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
