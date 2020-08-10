@@ -1,0 +1,10 @@
+server:
+  port: 8081
+payments:
+  url: http://localhost:8080
+  path: "/payments"
+spring:
+  data:
+    mongodb: #running with embedded mongo here -- see deps
+      port: 27017
+      host: localhost
